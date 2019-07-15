@@ -105,7 +105,7 @@
 									},
 									"MetaDataFileName": {
 										"value": {
-											"value": "@item().MetaDatefilename",
+											"value": "@item().MetaDatafilename",
 											"type": "Expression"
 										},
 										"type": "String"
