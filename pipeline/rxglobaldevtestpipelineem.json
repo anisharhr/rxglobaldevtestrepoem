@@ -73,6 +73,49 @@
 									"type": "DelimitedTextReadSetting"
 								}
 							}
+						},
+						{
+							"name": "Stored Procedure1",
+							"type": "SqlServerStoredProcedure",
+							"dependsOn": [
+								{
+									"activity": "CheckFileExists",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"storedProcedureName": "[dbo].[MetaDataActivityLog]",
+								"storedProcedureParameters": {
+									"IsExists": {
+										"value": {
+											"value": "@activity('CheckFileExists').output.exists",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"MetaDataFileName": {
+										"value": {
+											"value": "@item().MetaDatefilename",
+											"type": "Expression"
+										},
+										"type": "String"
+									}
+								}
+							},
+							"linkedServiceName": {
+								"referenceName": "rxglobaldevtestsqlLS",
+								"type": "LinkedServiceReference"
+							}
 						}
 					]
 				}
