@@ -5,19 +5,13 @@
 			"referenceName": "rxglobaldevtestbloblsem",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"datasetParam": {
-				"type": "string",
-				"defaultValue": "@item().name"
-			}
-		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "@dataset().datasetParam",
+					"value": "@item().MetaDatafilename",
 					"type": "Expression"
 				},
 				"container": "rxglobaldevtestinputfilesem"
