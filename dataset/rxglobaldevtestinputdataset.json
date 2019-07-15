@@ -14,6 +14,7 @@
 					"value": "@item().MetaDatafilename",
 					"type": "Expression"
 				},
+				"folderPath": "Input Data Files",
 				"container": "rxglobaldevtestinputfilesem"
 			},
 			"columnDelimiter": ",",
