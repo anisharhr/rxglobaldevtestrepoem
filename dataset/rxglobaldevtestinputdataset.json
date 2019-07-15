@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "@item().MetaDatafilename",
+					"value": "@item().name",
 					"type": "Expression"
 				},
 				"folderPath": "Input Data Files",
