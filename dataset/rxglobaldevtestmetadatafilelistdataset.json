@@ -1,0 +1,36 @@
+{
+	"name": "rxglobaldevtestmetadatafilelistdataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "rxglobaldevtestsqlLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MetadataFileName",
+				"type": "varchar"
+			},
+			{
+				"name": "NoofRecords",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CreatedTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[rxglobaldevtestmetadatatableem]"
+		}
+	}
+}
