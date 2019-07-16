@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureDataLakeStoreLocation",
 				"folderPath": {
-					"value": "raw/@{formatDateTime(adddays(utcnow(),-1),'yyyy')}/@{formatDateTime(adddays(utcnow(),-1),'MM')}/@{formatDateTime(utcnow(),'dd')}",
+					"value": "raw/@{activity('ReadMetaDataFiles').output.firstRow.Prop_1}/@{formatDateTime(adddays(utcnow(),-1),'yyyy')}/@{formatDateTime(adddays(utcnow(),-1),'MM')}/@{formatDateTime(utcnow(),'dd')}",
 					"type": "Expression"
 				}
 			},
