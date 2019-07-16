@@ -10,7 +10,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "@{activity('ReadMetaDataFiles').output.firstRow.Prop_0}",
+				"fileName": {
+					"value": "@{activity('ReadMetaDataFiles').output.firstRow.Prop_0}",
+					"type": "Expression"
+				},
 				"folderPath": "Input Data Files",
 				"container": "rxglobaldevtestinputfilesem"
 			},
