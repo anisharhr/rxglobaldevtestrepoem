@@ -1,0 +1,37 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory Name",
+			"defaultValue": "rxglobaldevtestadfem"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/rxglobaldevtestoutputdatasetem')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureDataLakeStore",
+				"typeProperties": {
+					"dataLakeStoreUri": "https://rxglbaldevtestadlsem.azuredatalakestore.net/webhdfs/v1",
+					"servicePrincipalId": "9d9c1cca-0428-4be3-a715-f9d9467b1593",
+					"servicePrincipalKey": {
+						"type": "SecureString",
+						"value": "**********"
+					},
+					"tenant": "26449267-b8dd-4b35-a8a4-3816241ad3b5",
+					"subscriptionId": "0b27db06-d7b3-45b6-9d23-d7ac82a6ecfa",
+					"resourceGroupName": "rxglobaldevtestrgem"
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
