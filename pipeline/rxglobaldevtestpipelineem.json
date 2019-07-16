@@ -116,6 +116,25 @@
 								"referenceName": "rxglobaldevtestsqlLS",
 								"type": "LinkedServiceReference"
 							}
+						},
+						{
+							"name": "If Condition1",
+							"type": "IfCondition",
+							"dependsOn": [
+								{
+									"activity": "Stored Procedure1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"expression": {
+									"value": "@activity('CheckFileExists').output.exists",
+									"type": "Expression"
+								}
+							}
 						}
 					]
 				}
