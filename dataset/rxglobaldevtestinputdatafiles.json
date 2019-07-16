@@ -14,7 +14,7 @@
 					"value": "@{activity('ReadMetaDataFiles').output.firstRow.Prop_0}",
 					"type": "Expression"
 				},
-				"folderPath": "Input Data Files",
+				"folderPath": "Input Data",
 				"container": "rxglobaldevtestinputfilesem"
 			},
 			"columnDelimiter": ",",
