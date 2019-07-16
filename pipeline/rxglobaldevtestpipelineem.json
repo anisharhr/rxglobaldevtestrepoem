@@ -166,7 +166,7 @@
 										}
 									},
 									{
-										"name": "Get Metadata1",
+										"name": "GetMetadataInputFiles",
 										"type": "GetMetadata",
 										"dependsOn": [
 											{
@@ -202,11 +202,11 @@
 										}
 									},
 									{
-										"name": "Copy Data1",
+										"name": "Data Copy From Blob to ADLS",
 										"type": "Copy",
 										"dependsOn": [
 											{
-												"activity": "Get Metadata1",
+												"activity": "GetMetadataInputFiles",
 												"dependencyConditions": [
 													"Succeeded"
 												]
