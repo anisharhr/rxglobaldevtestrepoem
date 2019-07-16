@@ -1,0 +1,16 @@
+{
+	"name": "rxglobaldevtestoutputdatasetem",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDataLakeStore",
+		"typeProperties": {
+			"dataLakeStoreUri": "https://rxglbaldevtestadlsem.azuredatalakestore.net/webhdfs/v1",
+			"servicePrincipalId": "9d9c1cca-0428-4be3-a715-f9d9467b1593",
+			"tenant": "26449267-b8dd-4b35-a8a4-3816241ad3b5",
+			"subscriptionId": "0b27db06-d7b3-45b6-9d23-d7ac82a6ecfa",
+			"resourceGroupName": "rxglobaldevtestrgem",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIlJYR0xPQkFMREVWVEVTVEFERkVNXzM0NjE0MzNkLWRkZGItNDFiNC1hYzMzLTAxMThlMTUyOTA0NiINCn0="
+		}
+	}
+}
