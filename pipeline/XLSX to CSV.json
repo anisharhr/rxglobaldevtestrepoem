@@ -1,6 +1,74 @@
 {
 	"name": "XLSX to CSV",
 	"properties": {
+		"activities": [
+			{
+				"name": "xls to csv",
+				"type": "IfCondition",
+				"dependsOn": [
+					{
+						"activity": "XLSX Data",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@activity('XLSX Data').output.exists",
+						"type": "Expression"
+					},
+					"ifTrueActivities": [
+						{
+							"name": "Copy Data1",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"enableStaging": false
+							}
+						}
+					]
+				}
+			},
+			{
+				"name": "XLSX Data",
+				"type": "GetMetadata",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "rxglobaldevtestinputdatafiles",
+						"type": "DatasetReference"
+					},
+					"fieldList": [
+						"exists"
+					],
+					"storeSettings": {
+						"type": "AzureBlobStorageReadSetting",
+						"recursive": true
+					},
+					"formatSettings": {
+						"type": "DelimitedTextReadSetting"
+					}
+				}
+			}
+		],
 		"annotations": []
 	}
 }

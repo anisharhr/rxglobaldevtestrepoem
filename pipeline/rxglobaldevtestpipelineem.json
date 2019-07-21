@@ -239,7 +239,7 @@
 												"formatSettings": {
 													"type": "DelimitedTextWriteSetting",
 													"quoteAllText": true,
-													"fileExtension": ".txt"
+													"fileExtension": ".csv"
 												}
 											},
 											"enableStaging": false
@@ -256,26 +256,6 @@
 												"type": "DatasetReference"
 											}
 										]
-									},
-									{
-										"name": "Convert excel to CSV",
-										"type": "ExecutePipeline",
-										"dependsOn": [
-											{
-												"activity": "GetMetadataInputFiles",
-												"dependencyConditions": [
-													"Succeeded"
-												]
-											}
-										],
-										"userProperties": [],
-										"typeProperties": {
-											"pipeline": {
-												"referenceName": "XLSX to CSV",
-												"type": "PipelineReference"
-											},
-											"waitOnCompletion": true
-										}
 									}
 								]
 							}
