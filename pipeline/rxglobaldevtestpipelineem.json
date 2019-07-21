@@ -257,6 +257,41 @@
 												"type": "DatasetReference"
 											}
 										]
+									},
+									{
+										"name": "DeleteInputFiles",
+										"type": "Delete",
+										"dependsOn": [
+											{
+												"activity": "Data Copy From Blob to ADLS",
+												"dependencyConditions": [
+													"Succeeded"
+												]
+											}
+										],
+										"policy": {
+											"timeout": "7.00:00:00",
+											"retry": 0,
+											"retryIntervalInSeconds": 30,
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"typeProperties": {
+											"dataset": {
+												"referenceName": "rxglobaldevtestdeletedataem",
+												"type": "DatasetReference"
+											},
+											"logStorageSettings": {
+												"linkedServiceName": {
+													"referenceName": "rxglobaldevtestoutputdatasetem",
+													"type": "LinkedServiceReference"
+												},
+												"path": "raw/2019"
+											},
+											"enableLogging": true,
+											"recursive": false
+										}
 									}
 								]
 							}
