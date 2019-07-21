@@ -1,0 +1,15 @@
+{
+	"name": "rxglobaldevtestdeletedataem",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "rxglobaldevtestbloblsem",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureBlob",
+		"typeProperties": {
+			"fileName": "",
+			"folderPath": "rxglobaldevtestinputfilesem/Input Data"
+		}
+	}
+}
