@@ -225,7 +225,8 @@
 												"type": "DelimitedTextSource",
 												"storeSettings": {
 													"type": "AzureBlobStorageReadSetting",
-													"recursive": true
+													"recursive": false,
+													"enablePartitionDiscovery": false
 												},
 												"formatSettings": {
 													"type": "DelimitedTextReadSetting"
