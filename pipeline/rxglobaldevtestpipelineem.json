@@ -287,10 +287,9 @@
 													"referenceName": "rxglobaldevtestoutputdatasetem",
 													"type": "LinkedServiceReference"
 												},
-												"path": "raw/2019"
+												"path": "enriched"
 											},
-											"enableLogging": true,
-											"recursive": false
+											"enableLogging": true
 										}
 									}
 								]
