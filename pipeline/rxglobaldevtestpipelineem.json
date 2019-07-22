@@ -263,7 +263,7 @@
 										"type": "Delete",
 										"dependsOn": [
 											{
-												"activity": "Data Copy From Blob to ADLS",
+												"activity": "Send Email",
 												"dependencyConditions": [
 													"Succeeded"
 												]
@@ -290,6 +290,42 @@
 												"path": "enriched"
 											},
 											"enableLogging": true
+										}
+									},
+									{
+										"name": "Send Email",
+										"type": "WebActivity",
+										"dependsOn": [
+											{
+												"activity": "Data Copy From Blob to ADLS",
+												"dependencyConditions": [
+													"Completed"
+												]
+											}
+										],
+										"policy": {
+											"timeout": "7.00:00:00",
+											"retry": 0,
+											"retryIntervalInSeconds": 30,
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"typeProperties": {
+											"url": "https://prod-16.centralus.logic.azure.com:443/workflows/054c624df5eb44148a9860927f8d689c/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=5QCK5zP_aRNvqTBBTBWFiikhCYIU_rhJOsLRJKU6sUM",
+											"method": "POST",
+											"headers": {
+												"Content-Type": "application/json"
+											},
+											"body": {
+												"DataFactoryName": "@{pipeline().DataFactory}",
+												"PipelineName": "@{pipeline().Pipeline}",
+												"Subject": "An error has occurred!",
+												"ErrorMessage": "The ADF pipeline has crashed! Please check the logs.",
+												"EmailTo": "anisharhr@outlook.com"
+											},
+											"linkedServices": [],
+											"datasets": []
 										}
 									}
 								]
